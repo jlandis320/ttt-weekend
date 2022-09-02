@@ -37,7 +37,6 @@ const messageEl = document.querySelector("#message")
 /*-------------------------------- Functions --------------------------------*/
 init()
 
-
 //? Step 3 - Upon loading, the game state should be initialized, and a function should be called to render this game state
 
   //// 3a) Create a function called `init`.
@@ -63,20 +62,31 @@ function init(){
 //? Step 4 - The state of the game should be rendered to the user
 
   // 4a) Create a function called `render`.
-  function render(){
-    board.forEach((space, index) => {
-      const playerChoice = squareEls[index]
-      if (space === -1) return playerChoice.textContent = 'O'
-      if (space === 1) return playerChoice.textContent = 'X'
-      if (space === null) return playerChoice.textContent = ''
-    });
-  }
   // //4b) Loop over `board` and for each element:
   ////     - Use the current index of the iteration to access the corresponding ////       square in the `squareEls` array.
   ////     - Style that square however you wish, dependent on the value  
   ////       contained in the current cell being iterated over (`-1`, `1`, or
   ////       `null`).  
-  
+  function render(){
+    board.forEach((space, index) => {
+      const playerChoice = squareEls[index]
+      if (space === -1) return playerChoice.textContent = 'X'
+      if (space === 1) return playerChoice.textContent = '0'
+      if (space === null) return playerChoice.textContent = ''
+    });
+  }
+
+  function renderMessage(){
+    if (winner === null) {
+      messageEl.textContent = `${turn}, make your choice:`
+    } else if (winner === "T"){
+      messageEl.textContent = `You tied!`
+    } else {
+      messageEl.textContent = `${turn} wins!`
+    }
+  }
+  renderMessage()
+
   // 4c) Render a message based on the current game state:
   //     - If winner has a value of `null` (meaning the game is still in
   //       progress), render whose turn it is.
