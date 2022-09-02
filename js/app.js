@@ -74,9 +74,6 @@ function init(){
       if (space === 1) return playerChoice.textContent = '0'
       if (space === null) return playerChoice.textContent = ''
     });
-  }
-
-  function renderMessage(){
     if (winner === null) {
       messageEl.textContent = `${turn}, make your choice:`
     } else if (winner === "T"){
@@ -85,7 +82,10 @@ function init(){
       messageEl.textContent = `${turn} wins!`
     }
   }
-  renderMessage()
+
+
+
+
 
   // 4c) Render a message based on the current game state:
   //     - If winner has a value of `null` (meaning the game is still in
