@@ -62,7 +62,7 @@ init()
 
   //// 3a) Create a function called `init`.
 function init(){
-  board = [null, null, null, null, null, null, null, null, null]
+  board = [1, null, null, null, -1, null, null, null, null]
   turn = 1
   winner = null
   render()
@@ -118,8 +118,14 @@ function init(){
   // 6a) Create a function called `handleClick`. It will have an `evt`
   //     parameter.
 function handleClick (evt){
-  const sqInx = parseInt(evt.target.id[2])
-  console.log(sqInx)
+  const sqIdx = parseInt(evt.target.id[2])
+  console.log(evt)
+  console.log(sqIdx);
+  if (winner !== null){
+    return
+  } if (board[sqIdx] !== null)
+    console.log('there is a move here')
+  else console.log('there is no move here');
 }
   // //6b) Attach an event listener to the game board (you can do this to each
   //   //  one of the existing `squareEls` OR add a new cached element reference
