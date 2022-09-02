@@ -7,6 +7,10 @@ let board, turn, winner
 
 
 /*------------------------ Cached Element References ------------------------*/
+const squareEls = document.querySelectorAll(".square")
+// console.log(squareEls.length)
+const messageEl = document.querySelector("#message")
+// console.log(messageEl);
 
 
 
@@ -27,10 +31,10 @@ let board, turn, winner
 
 // Step 2 - Store cached element references
 
-  // 2a) In a constant called `squareEls`, store the nine elements 
-  //    representing the squares on the page.
+  //// 2a) In a constant called `squareEls`, store the nine elements 
+  //    representing the squares on the page
 
-  // 2b) In a constant called `messageEl`, store the element that displays the 
+  //// 2b) In a constant called `messageEl`, store the element that displays the 
   //    game's status on the page.
 
 
