@@ -3,10 +3,26 @@
 
 
 /*---------------------------- Variables (state) ----------------------------*/
+//? Step 1 - Define the required variables used to track the state of the game
+
+//  // 1a) Use a variable named `board` to represent the state of the squares on//    the board.
+
+  //// 1b) Use a variable named `turn` to track whose turn it is.
+
+  //// 1c) Use a variable named `winner` to represent if anyone has won yet, or if a tie has occurred.
+
 let board, turn, winner
 
 
 /*------------------------ Cached Element References ------------------------*/
+//? Step 2 - Store cached element references
+
+  //// 2a) In a constant called `squareEls`, store the nine elements 
+  //    representing the squares on the page
+
+  //// 2b) In a constant called `messageEl`, store the element that displays the 
+  //    //game's status on the page.
+
 const squareEls = document.querySelectorAll(".square")
 // console.log(squareEls.length)
 const messageEl = document.querySelector("#message")
@@ -19,42 +35,31 @@ const messageEl = document.querySelector("#message")
 
 
 /*-------------------------------- Functions --------------------------------*/
+init()
 
 
-// Step 1 - Define the required variables used to track the state of the game
+//? Step 3 - Upon loading, the game state should be initialized, and a function should be called to render this game state
 
-//  // 1a) Use a variable named `board` to represent the state of the squares on//    the board.
+  //// 3a) Create a function called `init`.
+function init(){
+  board = [null, null, null, null, null, null, null, null, null]
+  turn = 1
+  winner = null
+  render()
+}
+console.log('call init', init());
+  //// 3b) Call this `init` function when the app loads.
 
-  //// 1b) Use a variable named `turn` to track whose turn it is.
+  //// 3c) Set the `board` variable to an array containing nine `null`s to 
+  // //   represent empty squares.
 
-  //// 1c) Use a variable named `winner` to represent if anyone has won yet, or if a tie has occurred.
+  //// 3d) Set the `turn` to `1` - which will represent player X.
 
-// Step 2 - Store cached element references
+  //// 3e) Set the `winner` to `null`.
 
-  //// 2a) In a constant called `squareEls`, store the nine elements 
-  //    representing the squares on the page
+  //// 3f) Call a function called `render` at the end of the `init` function.
 
-  //// 2b) In a constant called `messageEl`, store the element that displays the 
-  //    game's status on the page.
-
-
-// Step 3 - Upon loading, the game state should be initialized, and a function 
-//          should be called to render this game state
-
-  // 3a) Create a function called `init`.
-
-  // 3b) Call this `init` function when the app loads.
-
-  // 3c) Set the `board` variable to an array containing nine `null`s to 
-  //    represent empty squares.
-
-  // 3d) Set the `turn` to `1` - which will represent player X.
-
-  // 3e) Set the `winner` to `null`.
-
-  // 3f) Call a function called `render` at the end of the `init` function.
-
-// Step 4 - The state of the game should be rendered to the user
+//? Step 4 - The state of the game should be rendered to the user
 
   // 4a) Create a function called `render`.
 
@@ -73,12 +78,12 @@ const messageEl = document.querySelector("#message")
   //       won.
     
 
-// Step 5 - Define the required constants
+//? Step 5 - Define the required constants
 
   // 5a) In a constant called `winningCombos` define the eight possible winning 
   //     combinations as an array of arrays.
 
-// Step 6 - Handle a player clicking a square with a `handleClick` function
+//? Step 6 - Handle a player clicking a square with a `handleClick` function
 
   // 6a) Create a function called `handleClick`. It will have an `evt`
   //     parameter.
@@ -109,7 +114,7 @@ const messageEl = document.querySelector("#message")
   // 6h) All the state has been updated so we need to render our updated state 
   //     to the user by calling the `render` function we wrote earlier.
 
-// Step 7 - Build the `getWinner` function
+//? Step 7 - Build the `getWinner` function
 
   // 7a) Create a function called `getWinner`
 
@@ -146,7 +151,7 @@ const messageEl = document.querySelector("#message")
 
   // 7d) If there is no winner and there isn’t a tie, return `null`.
 
-// Step 8 - Create Reset functionality
+//? Step 8 - Create Reset functionality
 
   // 8a) Add a reset button to the HTML document.
 
