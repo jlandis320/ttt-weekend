@@ -47,7 +47,8 @@ function init(){
   winner = null
   render()
 }
-console.log('call init', init());
+
+// console.log(init);
   //// 3b) Call this `init` function when the app loads.
 
   //// 3c) Set the `board` variable to an array containing nine `null`s to 
@@ -62,13 +63,19 @@ console.log('call init', init());
 //? Step 4 - The state of the game should be rendered to the user
 
   // 4a) Create a function called `render`.
-
-  // 4b) Loop over `board` and for each element:
-  //     - Use the current index of the iteration to access the corresponding 
-  //       square in the `squareEls` array.
-  //     - Style that square however you wish, dependent on the value  
-  //       contained in the current cell being iterated over (`-1`, `1`, or
-  //       `null`).  
+  function render(){
+    board.forEach((space, index) => {
+      const playerChoice = squareEls[index]
+      if (space === -1) return playerChoice.textContent = 'O'
+      if (space === 1) return playerChoice.textContent = 'X'
+      if (space === null) return playerChoice.textContent = ''
+    });
+  }
+  // //4b) Loop over `board` and for each element:
+  ////     - Use the current index of the iteration to access the corresponding ////       square in the `squareEls` array.
+  ////     - Style that square however you wish, dependent on the value  
+  ////       contained in the current cell being iterated over (`-1`, `1`, or
+  ////       `null`).  
   
   // 4c) Render a message based on the current game state:
   //     - If winner has a value of `null` (meaning the game is still in
