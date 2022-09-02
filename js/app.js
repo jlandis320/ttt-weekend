@@ -3,7 +3,7 @@
 
   // 5a) In a constant called `winningCombos` define the eight possible winning 
   //     combinations as an array of arrays.
-const WinningCombos = [
+const winningCombos = [
   [board[0], board[1], board[2]]
   [board[3], board[4], board[5]]
   [board[6], board[7], board[8]]
@@ -109,7 +109,9 @@ function init(){
 
   // 6a) Create a function called `handleClick`. It will have an `evt`
   //     parameter.
-
+function handleClick (evt){
+  
+}
   // 6b) Attach an event listener to the game board (you can do this to each
   //     one of the existing `squareEls` OR add a new cached element reference
   //     that will allow you to take advantage of event bubbling). On the
