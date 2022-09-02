@@ -1,18 +1,17 @@
 /*-------------------------------- Constants --------------------------------*/
 //? Step 5 - Define the required constants
-
   // 5a) In a constant called `winningCombos` define the eight possible winning 
   //     combinations as an array of arrays.
-const winningCombos = [
-  [board[0], board[1], board[2]]
-  [board[3], board[4], board[5]]
-  [board[6], board[7], board[8]]
-  [board[0], board[3], board[6]]
-  [board[1], board[4], board[7]]
-  [board[2], board[5], board[8]]
-  [board[0], board[4], board[8]]
-  [board[2], board[4], board[6]]
-]
+// const winningCombos = [
+//   [board[0], board[1], board[2]]
+//   [board[3], board[4], board[5]]
+//   [board[6], board[7], board[8]]
+//   [board[0], board[3], board[6]]
+//   [board[1], board[4], board[7]]
+//   [board[2], board[5], board[8]]
+//   [board[0], board[4], board[8]]
+//   [board[2], board[4], board[6]]
+// ]
 
 
 /*---------------------------- Variables (state) ----------------------------*/
@@ -23,8 +22,10 @@ const winningCombos = [
   //// 1b) Use a variable named `turn` to track whose turn it is.
 
   //// 1c) Use a variable named `winner` to represent if anyone has won yet, or if a tie has occurred.
+  
+  let board, turn, winner
 
-let board, turn, winner
+
 
 
 /*------------------------ Cached Element References ------------------------*/
@@ -44,8 +45,15 @@ let board, turn, winner
 
 
 /*----------------------------- Event Listeners -----------------------------*/
-
-
+squareEls[0].addEventListener('click', handleClick)
+squareEls[1].addEventListener('click', handleClick)
+squareEls[2].addEventListener('click', handleClick)
+squareEls[3].addEventListener('click', handleClick)
+squareEls[4].addEventListener('click', handleClick)
+squareEls[5].addEventListener('click', handleClick)
+squareEls[6].addEventListener('click', handleClick)
+squareEls[7].addEventListener('click', handleClick)
+squareEls[8].addEventListener('click', handleClick)
 
 /*-------------------------------- Functions --------------------------------*/
 init()
@@ -110,17 +118,18 @@ function init(){
   // 6a) Create a function called `handleClick`. It will have an `evt`
   //     parameter.
 function handleClick (evt){
-  
+  const sqInx = parseInt(evt.target.id[2])
+  console.log(sqInx)
 }
-  // 6b) Attach an event listener to the game board (you can do this to each
-  //     one of the existing `squareEls` OR add a new cached element reference
-  //     that will allow you to take advantage of event bubbling). On the
-  //     `'click'` event, it should call the `handleClick` function
-  //     you created in 6a.
+  // //6b) Attach an event listener to the game board (you can do this to each
+  //   //  one of the existing `squareEls` OR add a new cached element reference
+  // // that will allow you to take advantage of event bubbling). On the
+  ////     `'click'` event, it should call the `handleClick` function
+  //  //   you created in 6a.
 
-  // 6c) Obtain the index of the square that was clicked by "extracting" the 
-  //     index from an `id` assigned to the element in the HTML. Assign this  
-  //     to a constant called `sqIdx`.
+  // //6c) Obtain the index of the square that was clicked by "extracting" the 
+  // //    index from an `id` assigned to the element in the HTML. Assign this  
+  //   //  to a constant called `sqIdx`.
 
   // 6d) If the `board` has a value at the `sqIdx`, immediately `return`  
   //     because that square is already taken. Also, if `winner` is not `null`
@@ -141,9 +150,9 @@ function handleClick (evt){
 //? Step 7 - Build the `getWinner` function
 
   // 7a) Create a function called `getWinner`
-function getWinner{
+// function getWinner{
 
-}
+// }
   /* 
    * There are two methods you can use to find out if there is a winner.
    *
