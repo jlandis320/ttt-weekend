@@ -1,5 +1,18 @@
 /*-------------------------------- Constants --------------------------------*/
+//? Step 5 - Define the required constants
 
+  // 5a) In a constant called `winningCombos` define the eight possible winning 
+  //     combinations as an array of arrays.
+const WinningCombos = [
+  [board[0], board[1], board[2]]
+  [board[3], board[4], board[5]]
+  [board[6], board[7], board[8]]
+  [board[0], board[3], board[6]]
+  [board[1], board[4], board[7]]
+  [board[2], board[5], board[8]]
+  [board[0], board[4], board[8]]
+  [board[2], board[4], board[6]]
+]
 
 
 /*---------------------------- Variables (state) ----------------------------*/
@@ -22,12 +35,12 @@ let board, turn, winner
 
   //// 2b) In a constant called `messageEl`, store the element that displays the 
   //    //game's status on the page.
-
-const squareEls = document.querySelectorAll(".square")
-// console.log(squareEls.length)
-const messageEl = document.querySelector("#message")
-// console.log(messageEl);
-
+  
+  const squareEls = document.querySelectorAll(".square")
+  // console.log(squareEls.length)
+  const messageEl = document.querySelector("#message")
+  // console.log(messageEl);
+  
 
 
 /*----------------------------- Event Listeners -----------------------------*/
@@ -83,22 +96,14 @@ function init(){
     }
   }
 
-
-
-
-
-  // 4c) Render a message based on the current game state:
-  //     - If winner has a value of `null` (meaning the game is still in
-  //       progress), render whose turn it is.
-  //     - If `winner` is equal to `'T'` (tie), render a tie message.
-  //     - Otherwise, render a congratulatory message to the player that has 
-  //       won.
+  //// 4c) Render a message based on the current game state:
+  ////     - If winner has a value of `null` (meaning the game is still in
+  //  //     progress), render whose turn it is.
+  //    // - If `winner` is equal to `'T'` (tie), render a tie message.
+  //     // Otherwise, render a congratulatory message to the player that has 
+  //      // won.
     
 
-//? Step 5 - Define the required constants
-
-  // 5a) In a constant called `winningCombos` define the eight possible winning 
-  //     combinations as an array of arrays.
 
 //? Step 6 - Handle a player clicking a square with a `handleClick` function
 
@@ -134,7 +139,9 @@ function init(){
 //? Step 7 - Build the `getWinner` function
 
   // 7a) Create a function called `getWinner`
+function getWinner{
 
+}
   /* 
    * There are two methods you can use to find out if there is a winner.
    *
