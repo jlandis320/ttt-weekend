@@ -126,9 +126,8 @@ function handleClick(evt){
   } else if (board[sqIdx] !== null) {
     return 
   } else {
-    // 6e) Update the `board` array at the `sqIdx` with the current value of
-    //     `turn`.
     board.splice(sqIdx, 1, turn)
+    turn = turn * -1
   }
   console.log('turn: ', turn);
   console.log('board: ', board);
@@ -146,7 +145,8 @@ function handleClick(evt){
   //// 6d) If the `board` has a value at the `sqIdx`, immediately `return`  
   //  //   because that square is already taken. Also, if `winner` is not `null`
   //    // immediately `return` because the game is over.
-
+  //  // 6e) Update the `board` array at the `sqIdx` with the current value of
+   // //     `turn`.
 
 
   // 6f) Change the turn by multiplying `turn` by `-1` (this flips a `1` to
