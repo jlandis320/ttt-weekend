@@ -117,15 +117,21 @@ function init(){
 
   // 6a) Create a function called `handleClick`. It will have an `evt`
   //     parameter.
-function handleClick (evt){
+function handleClick(evt){
   const sqIdx = parseInt(evt.target.id[2])
   console.log(evt)
-  console.log(sqIdx);
+  console.log("sqIdx: ", sqIdx);
   if (winner !== null){
     return
-  } if (board[sqIdx] !== null)
-    console.log('there is a move here')
-  else console.log('there is no move here');
+  } else if (board[sqIdx] !== null) {
+    return 
+  } else {
+    // 6e) Update the `board` array at the `sqIdx` with the current value of
+    //     `turn`.
+    board.splice(sqIdx, 1, turn)
+  }
+  console.log('turn: ', turn);
+  console.log('board: ', board);
 }
   // //6b) Attach an event listener to the game board (you can do this to each
   //   //  one of the existing `squareEls` OR add a new cached element reference
@@ -137,12 +143,11 @@ function handleClick (evt){
   // //    index from an `id` assigned to the element in the HTML. Assign this  
   //   //  to a constant called `sqIdx`.
 
-  // 6d) If the `board` has a value at the `sqIdx`, immediately `return`  
-  //     because that square is already taken. Also, if `winner` is not `null`
-  //     immediately `return` because the game is over.
+  //// 6d) If the `board` has a value at the `sqIdx`, immediately `return`  
+  //  //   because that square is already taken. Also, if `winner` is not `null`
+  //    // immediately `return` because the game is over.
 
-  // 6e) Update the `board` array at the `sqIdx` with the current value of
-  //     `turn`.
+
 
   // 6f) Change the turn by multiplying `turn` by `-1` (this flips a `1` to
   //     `-1`, and vice-versa).
