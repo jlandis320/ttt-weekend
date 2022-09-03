@@ -1,3 +1,4 @@
+
 /*-------------------------------- Constants --------------------------------*/
 //? Step 5 - Define the required constants
   // 5a) In a constant called `winningCombos` define the eight possible winning 
@@ -57,12 +58,11 @@ squareEls[8].addEventListener('click', handleClick)
 
 /*-------------------------------- Functions --------------------------------*/
 init()
-
 //? Step 3 - Upon loading, the game state should be initialized, and a function should be called to render this game state
 
   //// 3a) Create a function called `init`.
 function init(){
-  board = [1, null, null, null, -1, null, null, null, null]
+  board = [null, null, null, null, null, null, null, null, null]
   turn = 1
   winner = null
   render()
@@ -128,6 +128,8 @@ function handleClick(evt){
   } else {
     board.splice(sqIdx, 1, turn)
     turn = turn * -1
+    // winner = getWinner()
+    render()
   }
   console.log('turn: ', turn);
   console.log('board: ', board);
@@ -149,14 +151,14 @@ function handleClick(evt){
    // //     `turn`.
 
 
-  // 6f) Change the turn by multiplying `turn` by `-1` (this flips a `1` to
-  //     `-1`, and vice-versa).
+//  // 6f) Change the turn by multiplying `turn` by `-1` (this flips a `1` to
+  ////     `-1`, and vice-versa).
 
-  // 6g) Set the `winner` variable if there's a winner by calling a new 
-  //     function: `getWinner`.
+ // // 6g) Set the `winner` variable if there's a winner by calling a new 
+  ////     function: `getWinner`.
 
-  // 6h) All the state has been updated so we need to render our updated state 
-  //     to the user by calling the `render` function we wrote earlier.
+//  // 6h) All the state has been updated so we need to render our updated state 
+  ////     to the user by calling the `render` function we wrote earlier.
 
 //? Step 7 - Build the `getWinner` function
 
