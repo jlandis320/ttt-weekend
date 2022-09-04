@@ -67,6 +67,7 @@ const winningCombos = [
     turn = 1
     winner = null
     render()
+    resetBtn.setAttribute('hidden', true)
   }
   
   // console.log(init);
@@ -112,6 +113,7 @@ const winningCombos = [
       messageEl.textContent = `Player 2 wins!`
     }
   }
+// TODO: research switch case & ternary for 99 - 114
   
   //// 4c) Render a message based on the current game state:
   ////     - If winner has a value of `null` (meaning the game is still in
@@ -127,6 +129,7 @@ const winningCombos = [
   // 6a) Create a function called `handleClick`. It will have an `evt`
   //     parameter.
   function handleClick(evt){
+    resetBtn.removeAttribute('hidden')
     const sqIdx = parseInt(evt.target.id[2])
     console.log(evt)
     console.log("sqIdx: ", sqIdx);
