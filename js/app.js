@@ -97,11 +97,19 @@ const winningCombos = [
       if (space === null) return playerChoice.textContent = ''
     });
     if (winner === null) {
-      messageEl.textContent = `${turn}, make your choice:`
+      let player = ''
+      if (turn === 1){
+        player = 'Player 1'
+      } else {
+        player = 'Player 2'
+      }
+      messageEl.textContent = `${player}, make your choice:`
     } else if (winner === "T"){
       messageEl.textContent = `You tied!`
+    } else if (winner === 1){
+      messageEl.textContent = `Player 1 wins!`
     } else {
-      messageEl.textContent = `${turn} wins!`
+      messageEl.textContent = `Player 2 wins!`
     }
   }
   
@@ -165,23 +173,31 @@ const winningCombos = [
 
   // 7a) Create a function called `getWinner`
 function getWinner(){
-  winningCombos.forEach(winningCombo => {
-    if (Math.abs(board[winningCombo[0]] + board[winningCombo[1]] + board[winningCombo[2]] === 3))
-    winner = turn
-  }) 
+  comboValues = []
+  winningCombos.forEach(winningCombo => comboValues.push(Math.abs(board[winningCombo[0]] + board[winningCombo[1]] + board[winningCombo[2]])))
+  if (comboValues.includes(3)) {
+    turn *= -1
+    return turn
+  } else if (!board.some(spaces => spaces === null)){
+    console.log("check");
+    return "T"
+  } else {
+    return null
+  }
+  console.log('comboValues: ', comboValues);
 }
 
+// console.log("winner: ", winner);
 
-// function getWinner() {
-// 	winningCombos.forEach(combo => {
-// 	if (Math.abs(board[combo[0]] + board[combo[1]] + board[combo[2]]) === 3){
-// 			winner = turn
-// 		}else if(!board.includes(null)){
-// 			winner = 'T'
-// 		}
-// 	})
-// }
-
+  // winningCombos.forEach(winningCombo => {
+  //   if (Math.abs(board[winningCombo[0]] + board[winningCombo[1]] + board[winningCombo[2]] === 3)){
+  //     winner = turn 
+  //   } else if (!board.includes(null)){
+  //     winner = 'T' 
+  //   } else {
+  //     return null
+  //   }
+  // }) 
 
   // 7b2)For each one of the winning combinations you wrote in step 5, find the
   //     total of each winning combination. Convert the total to an absolute 
