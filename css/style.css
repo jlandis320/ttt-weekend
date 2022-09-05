@@ -3,7 +3,7 @@ body {
 	/* Use a system font, if none are available use an available sans-sarif   font */
 	font-family: 'Rajdhani', sans-serif;
   color: aliceblue;
-	/* margin: 50px; */
+	margin: 0px;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -14,11 +14,12 @@ h1 {
   font-weight:bolder;
   font-size: 80px;
   margin-bottom: 30px;
+  text-shadow: 0px 0px 10px;
 }
 
 h2{
   font-weight: lighter;
-  margin-bottom: 30px;
+  margin-bottom: 80px;
   margin-top: 0px;
 }
 
@@ -27,6 +28,9 @@ section.board {
   grid-template-rows: repeat(3, 10vmin);
   grid-template-columns: repeat(3, 10vmin);
   grid-gap: 0vmin;
+  box-shadow: 
+    0px 0px 300px 5px aliceblue,
+    0px 0px 0px 3px aliceblue;
 }
 
 .square:hover {
@@ -42,10 +46,24 @@ div {
 }
 
 #reset-button {
-  margin-top: 40px;
+  margin-top: 100px;
   background-color: transparent;
   font-family: inherit;
-  color: aliceblue;
+  color: red;
+  text-shadow: 
+  0px 0px 5px red,
+  0px 0px 7px white,
+  0px 0px 12px red,
+  0px 0px 15px white,
+  0px 0px 25px red,
+  0px 0px 30px white;
+  border: 2px solid rgb(255, 255, 255);
+  /* box-shadow:   0px 0px 5px white,
+  0px 0px 7px white,
+  0px 0px 12px white,
+  0px 0px 20px red,
+  0px 0px 25px red,
+  0px 0px 30px red; */
   padding: 5px 20px 5px 20px;
   font-size: 20px;
   font-weight: lighter;
@@ -53,6 +71,21 @@ div {
 
 #reset-button:hover {
   /* font-weight: bolder; */
-  background-color: rgb(240, 248, 255, .2);
+  /* background-color: rgb(240, 248, 255, .2); */
   cursor: pointer;
+  border: 0ch;
+  box-shadow:   
+  inset 0px 0px 5px rgb(253, 134, 134),
+  /* inset 0px 0px 7px rgb(253, 134, 134), */
+  inset 0px 0px 12px rgb(255, 2, 2),
+  inset 0px 0px 20px red,
+  /* inset 0px 0px 25px red, */
+  /* inset 0px 0px 30px red, */
+  0px 0px 5px rgb(253, 134, 134),
+  0px 0px 7px rgb(253, 134, 134),
+  0px 0px 12px rgb(255, 2, 2),
+  0px 0px 20px red,
+  0px 0px 25px red,
+  0px 0px 30px red;
+
 }
