@@ -1,13 +1,25 @@
 body {
-    background-color: gray;
+    background-color: rgb(6, 3, 33);
 	/* Use a system font, if none are available use an available sans-sarif   font */
-	font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-		Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	font-family: 'Rajdhani', sans-serif;
+  color: aliceblue;
 	/* margin: 50px; */
   height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+h1 {
+  font-weight:bolder;
+  font-size: 80px;
+  margin-bottom: 30px;
+}
+
+h2{
+  font-weight: lighter;
+  margin-bottom: 30px;
+  margin-top: 0px;
 }
 
 section.board {
@@ -17,13 +29,30 @@ section.board {
   grid-gap: 0vmin;
 }
 
+.square:hover {
+  background-color: rgb(240, 248, 255, .2);
+  cursor: pointer;
+}
+
 div {
-  border: 3px solid black;
+  border: 3px solid aliceblue;
   font-size: 8vmin;
   text-align: center;
   vertical-align: middle;
 }
 
 #reset-button {
-  margin-top: 20px;
+  margin-top: 40px;
+  background-color: transparent;
+  font-family: inherit;
+  color: aliceblue;
+  padding: 5px 20px 5px 20px;
+  font-size: 20px;
+  font-weight: lighter;
+}
+
+#reset-button:hover {
+  /* font-weight: bolder; */
+  background-color: rgb(240, 248, 255, .2);
+  cursor: pointer;
 }
