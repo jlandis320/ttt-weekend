@@ -44,10 +44,11 @@ section.board {
   0px 0px 300px 5px aliceblue;
 }
 
-.square:hover {
+.unplayed:hover {
   background-color: rgb(240, 248, 255, .2);
   cursor: pointer;
 }
+
 
 div {
   border: 3px solid aliceblue;

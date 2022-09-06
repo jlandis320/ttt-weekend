@@ -59,8 +59,14 @@
     board.forEach((space, index) => {
       // playerChoise is the squareEl at the board index. So the 3rd space in the board array is the top right square on the board
       const playerChoice = squareEls[index]
-      if (space === -1) return playerChoice.textContent = 'O'
-      if (space === 1) return playerChoice.textContent = 'X'
+      if (space === -1) {
+          playerChoice.classList.remove('unplayed')
+          return playerChoice.textContent = 'O'
+          }
+      if (space === 1) {
+        playerChoice.classList.remove('unplayed')
+        return playerChoice.textContent = 'X'
+        }
       if (space === null) return playerChoice.textContent = ''
     });
     if (winner === null) {
