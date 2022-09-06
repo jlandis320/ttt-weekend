@@ -128,7 +128,6 @@
       return turn
       // if board does not contain some null spaces, return tie 
     } else if (!board.some(spaces => spaces === null)){
-      console.log("check");
       return "T"
       // in any other case, don't return anything (without this, the first click wins immediately)
     } else {
