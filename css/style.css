@@ -17,6 +17,12 @@ h1 {
   font-size: 80px;
   margin-bottom: 30px;
 }
+@media (max-width:570px){
+  h1{
+    font-size: 40px;
+  }
+}
+
 
 h2 {
   font-weight: lighter;
@@ -91,5 +97,5 @@ div {
   0px 0px 20px red,
   0px 0px 25px red,
   0px 0px 30px red;
-
 }
+
