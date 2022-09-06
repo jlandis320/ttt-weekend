@@ -36,15 +36,7 @@
   
   /*----------------------------- Event Listeners -----------------------------*/
   // adds event listener to each square of the board, calls handleClick func
-  squareEls[0].addEventListener('click', handleClick)
-  squareEls[1].addEventListener('click', handleClick)
-  squareEls[2].addEventListener('click', handleClick)
-  squareEls[3].addEventListener('click', handleClick)
-  squareEls[4].addEventListener('click', handleClick)
-  squareEls[5].addEventListener('click', handleClick)
-  squareEls[6].addEventListener('click', handleClick)
-  squareEls[7].addEventListener('click', handleClick)
-  squareEls[8].addEventListener('click', handleClick)
+  squareEls.forEach(square => square.addEventListener('click', handleClick))
 
   // adds event listener to reset button and calls init func
   resetBtn.addEventListener('click', init)
