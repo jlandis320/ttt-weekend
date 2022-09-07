@@ -49,6 +49,16 @@ section.board {
   cursor: pointer;
 }
 
+.winner {
+  color: red;
+  text-shadow: 
+  0px 0px 5px red,
+  0px 0px 7px white,
+  0px 0px 12px red,
+  0px 0px 15px white,
+  0px 0px 25px red,
+  0px 0px 30px white;
+}
 
 div {
   border: 3px solid aliceblue;

@@ -60,11 +60,11 @@
       // playerChoise is the squareEl at the board index. So the 3rd space in the board array is the top right square on the board
       const playerChoice = squareEls[index]
       if (space === -1) {
-          playerChoice.classList.remove('unplayed')
-          return playerChoice.textContent = 'O'
-          }
+        // playerChoice.classList.remove('unplayed', 'winner')
+        return playerChoice.textContent = 'O'
+        }
       if (space === 1) {
-        playerChoice.classList.remove('unplayed')
+        // playerChoice.classList.remove('unplayed', 'winner')
         return playerChoice.textContent = 'X'
         }
       if (space === null) return playerChoice.textContent = ''
@@ -106,8 +106,10 @@
       // change the turn 
       turn = turn * -1
       // check if there's a winner
+      squareEls[sqIdx].classList.remove('winner')
       winner = getWinner()
       // update the board
+      squareEls[sqIdx].classList.remove('unplayed')
       render()
     }
     // console.log('turn: ', turn);
@@ -122,6 +124,9 @@
     // if comboValues includes 3, multiply turn again (this gets the message to display the correct winner)
     console.log('comboValues: ', comboValues);
     if (comboValues.includes(3)) {
+      // comboValues.classList.addClass('winner')
+      const winningComboIdx = comboValues.findIndex((element) => element === 3);
+      winningCombos[winningComboIdx].forEach(idx => squareEls[idx].classList.add('winner'))
       turn *= -1
       return turn
       // if board does not contain some null spaces, return tie 
